@@ -1,8 +1,9 @@
 # MyLab.DBLocalization
 
 ## Purpose
-Minimize table and column size for localization in database.
+Decrease table and column size and complexity for localization in database.
 
+> This design involves trade-offs, including a higher level of abstraction, which may complicate ORM navigation properties and implicit joins.
 
 ## Query localization
 ``` sql
@@ -18,3 +19,6 @@ where
     p.Name = 'Book'
     and l.Code = 'zh-TW'
 ```
+
+## Explain
+Use a `Localization.LocalizationMapId` instead a separate localization mapping table.
